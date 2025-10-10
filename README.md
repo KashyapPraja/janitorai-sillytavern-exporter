@@ -21,9 +21,9 @@ A Tampermonkey userscript that exports JanitorAI characters as SillyTavern-compa
 ## Installation
 
 1. Install a userscript manager such as [Tampermonkey](https://www.tampermonkey.net/) for your browser.
-2. Download the script file [janitorai-sillytavern-exporter.user.js](https://github.com/cwlum/janitorai-sillytavern-exporter/raw/main/janitorai-sillytavern-exporter.user.js).
-3. Open the file in your browser and allow Tampermonkey to install it.
-4. Visit any JanitorAI character page—the exporter button should appear in the lower-right corner.
+2. Download the script file [janitorai-sillytavern-exporter.user.js](https://github.com/cwlum/janitorai-sillytavern-exporter/raw/master/janitorai-sillytavern-exporter.user.js).
+4. Open the file in your browser and allow Tampermonkey to install it.
+5. Visit any JanitorAI character page—the exporter button should appear in the lower-right corner.
 
 ## Usage
 
